@@ -1,0 +1,13 @@
+# Table IV: leave-one-out evaluation on the OMIM test diseases (221 of 276),
+# with the configurations selected on the validation split (configs/loocv_validation.yaml).
+# RWR-MH (defaults) uses the published hyperparameters; it is not in Table IV
+# but belongs to the family of comparisons corrected with Holm.
+split: test
+methods:
+  QW-MH-TA: {method: QW-MH, delta: 0.5, kappa: 0.05, eta: 0.1, gamma: 2.0, T: 8, batch: 256}
+  QW-MH-ST: {method: QW-MH, delta: 0.1, kappa: 0.05, eta: 0.25, gamma: 1.0, t: 4}
+  RWR-MH (3x3): {method: RWR-MH, delta: 0.5, lam: 0.5, eta: 0.25, r: 0.7}
+  RWR-MH (ext.): {method: RWR-MH, delta: 0.9, lam: 0.5, eta: 0.25, r: 0.7}
+  RWR-MH (defaults): {method: RWR-MH, delta: 0.5, lam: 0.5, eta: 0.5, r: 0.7}
+  QW-M-TA: {method: QW-M, delta: 0.0, gamma: 0.0, T: 128, batch: 256}
+  RWR-M: {method: RWR-M, delta: 0.5, r: 0.3}

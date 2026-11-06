@@ -1,0 +1,7 @@
+# Layer subsets (Section V-B): QW-M-ST on the DisGeNET test diseases with all
+# three layers and with PATH alone, at the DisGeNET validation configuration.
+dataset: dgn
+split: test
+methods:
+  QW-M-ST: {method: QW-M, init: coherent, delta: 0.0, gamma: 0.0, t: 256}
+  QW-M-ST (PATH): {method: QW-M, init: coherent, delta: 0.0, gamma: 0.0, t: 256, layers: [PATH]}

@@ -1,0 +1,23 @@
+# Hyperparameter search for the leave-one-out evaluation on the OMIM
+# validation diseases (55 of 276). Each method lists the blocks of values that
+# were evaluated; the configuration with the highest mean reciprocal rank is
+# selected (configs/loocv.yaml).
+split: validation
+methods:
+  QW-MH-TA:
+    {method: QW-MH, batch: 256, delta: [0.0, 0.1, 0.5], kappa: [0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1.0],
+     eta: [0.025, 0.05, 0.1, 0.25, 0.5, 0.75], gamma: [0.0, 1.0, 2.0, 5.0],
+     T: [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]}
+  QW-MH-ST:
+    - {method: QW-MH, delta: [0.0, 0.1, 0.5], kappa: [0.1, 0.25, 0.5, 1.0], eta: [0.25, 0.5, 0.75],
+       gamma: [0.0, 1.0], t: [1, 2, 4, 8, 16, 32, 64]}
+    - {method: QW-MH, delta: [0.0, 0.1], kappa: [0.01, 0.025, 0.05, 0.1], eta: [0.1, 0.25],
+       gamma: [1.0, 2.0, 5.0], t: [0.5, 1, 2, 4, 8, 16]}
+  RWR-MH (3x3): {method: RWR-MH, delta: 0.5, lam: [0.25, 0.5, 0.75], eta: [0.25, 0.5, 0.75], r: 0.7}
+  RWR-MH (ext.):
+    {method: RWR-MH, delta: [0.1, 0.5, 0.9], lam: [0.1, 0.25, 0.5, 0.75, 0.9],
+     eta: [0.1, 0.25, 0.5, 0.75, 0.9], r: [0.3, 0.5, 0.7, 0.9]}
+  QW-M-TA:
+    {method: QW-M, batch: 256, delta: [0.0, 0.1, 0.5], gamma: [0.0, 1.0, 2.0, 5.0],
+     T: [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]}
+  RWR-M: {method: RWR-M, delta: 0.5, r: [0.3, 0.5, 0.7, 0.9]}

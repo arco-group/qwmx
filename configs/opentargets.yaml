@@ -1,0 +1,15 @@
+# Table III: Open Targets, all 51 diseases, with the configurations selected
+# on the DisGeNET validation split (configs/validation_dgn.yaml).
+dataset: ot
+split: all
+methods:
+  QW-M-TA: {method: QW-M, init: coherent, delta: 0.0, gamma: 0.0, T: 256, batch: 128}
+  QW-M-ST: {method: QW-M, init: coherent, delta: 0.0, gamma: 0.0, t: 256}
+  QW-M-RC: {method: QW-M, norm: raw, scale_coupling: true, init: incoherent, delta: 0.1, gamma: 10.0, t: 0.45}
+  DK-M: {method: DK-M, delta: 0.1, t: 16}
+  RWR-M: {method: RWR-M, delta: 0.9, r: 0.3}
+  QA (PATH): {method: QA, graph: PATH, t: 1.5, gamma: 0.0}
+  DK (merged): {method: DK, graph: MERGED, t: 0.05}
+  RWR (merged): {method: RWR, graph: MERGED, r: 0.2}
+  NEI: {method: NEI, graph: MERGED}
+  Degree: {method: Degree, graph: MERGED}

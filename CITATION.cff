@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "qwmx: time-averaged quantum walks for disease gene prioritization on multiplex biological networks"
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/arco-group/qwmx"
+authors:
+  - family-names: Tortora
+    given-names: Matteo
+  - family-names: Di Feola
+    given-names: Francesco
+  - family-names: Iele
+    given-names: Irene
+  - family-names: Caprio
+    given-names: Floriano
+  - family-names: Soda
+    given-names: Paolo
+preferred-citation:
+  type: conference-paper
+  title: "Scalable Time-Averaged Quantum Walks for Disease Gene Prioritization on Multiplex Biological Networks"
+  authors:
+    - family-names: Tortora
+      given-names: Matteo
+    - family-names: Di Feola
+      given-names: Francesco
+    - family-names: Iele
+      given-names: Irene
+    - family-names: Caprio
+      given-names: Floriano
+    - family-names: Soda
+      given-names: Paolo
+  collection-title: "2026 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), 17th International Workshop on High Performance Bioinformatics and Biomedicine (HiBB)"
+  year: 2026
